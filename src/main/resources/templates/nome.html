@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Evolução</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h2 th:text="'Evolução do nome: ' + ${nome}"></h2>
+<canvas id="grafico" width="600" height="400"></canvas>
+<script>
+  const labels = [[${dados.stream().map(d -> d.getDecada()).toList()}]];
+  const data = [[${dados.stream().map(d -> d.getFrequencia()).toList()}]];
+  new Chart(document.getElementById('grafico'), {
+      type: 'line',
+      data: {
+          labels: labels[0],
+          datasets: [{label: 'Frequência', data: data[0]}]
+      }
+  });
+</script>
+</body>
+</html>

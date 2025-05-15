@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>IBGE Nomes</title></head>
+<body>
+<h1>Consulta de Nomes IBGE</h1>
+<form action="/nome" method="get">
+    <input name="nome" placeholder="Nome">
+    <button type="submit">Ver Evolução</button>
+</form>
+
+<form action="/comparar" method="get">
+    <input name="nome1" placeholder="Nome 1">
+    <input name="nome2" placeholder="Nome 2">
+    <button type="submit">Comparar</button>
+</form>
+</body>
+</html>
